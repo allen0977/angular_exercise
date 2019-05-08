@@ -2,7 +2,8 @@
  * This file acts as a barrel for all the states, reducers found under examples module.
  */
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
-import * as fromRoot from 'app/core/store';
+
+import * as fromRoot from '../../core/store';
 import { StockMarketState } from './stock/models/stock.model';
 import * as fromStock from './stock/reducers';
 import { TodosState } from './todos/models/todos.model';
@@ -12,13 +13,13 @@ import * as fromTodos from './todos/reducers';
  * Interface for a slice of state. Top level state interface in examples module (ExamplesState) is just a map of keys to inner state types.
  */
 export interface ExamplesState {
-  stock: StockMarketState;
-  todos: TodosState;
+    stock: StockMarketState;
+    todos: TodosState;
 }
 
 // Extends our Base App State.
 export interface State extends fromRoot.State {
-  examples: ExamplesState;
+    examples: ExamplesState;
 }
 
 /**
@@ -28,8 +29,8 @@ export interface State extends fromRoot.State {
  * Here the examplesReducer only manages a slice of state that consist of stockData.
  */
 export const examplesReducer: ActionReducerMap<ExamplesState> = {
-  stock: fromStock.stockMarketReducer,
-  todos: fromTodos.todosReducer
+    stock: fromStock.stockMarketReducer,
+    todos: fromTodos.todosReducer,
 };
 
 /**

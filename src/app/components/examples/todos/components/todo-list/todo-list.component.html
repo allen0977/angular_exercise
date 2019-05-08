@@ -1,7 +1,8 @@
 <mat-card *ngFor="let todo of todos" class="todo">
   <mat-card-content>
-    <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
-    <span class="todo-label" [ngClass]="{ 'todo-label-done': todo.done }">
+    <mat-checkbox (change)="onToggleTodo(todo)" [checked]="todo.done"
+      class="todo-done"></mat-checkbox>
+    <span [ngClass]="{ 'todo-label-done': todo.done }" class="todo-label">
       &nbsp;{{todo.name}}&nbsp;
     </span>
   </mat-card-content>

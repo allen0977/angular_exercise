@@ -1,18 +1,15 @@
-import { Directive, Input, OnInit, HostListener } from '@angular/core';
+import { Directive, HostListener, Input, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material';
+
 import { MatSidenavHelperService } from './mat-sidenav-helper.service';
 
 @Directive({
-    selector: '[matSidenavHelper]'
+    selector: '[matSidenavHelper]',
 })
 export class MatSidenavHelperDirective implements OnInit {
-
     @Input('matSidenavHelper') id: string;
 
-    constructor(private matSidenavService: MatSidenavHelperService,
-                private matSidenav: MatSidenav
-    ) {
-    }
+    constructor(private matSidenavService: MatSidenavHelperService, private matSidenav: MatSidenav) {}
 
     ngOnInit() {
         this.matSidenavService.setSidenav(this.id, this.matSidenav);
@@ -20,13 +17,12 @@ export class MatSidenavHelperDirective implements OnInit {
 }
 
 @Directive({
-    selector: '[matSidenavToggler]'
+    selector: '[matSidenavToggler]',
 })
 export class MatSidenavTogglerDirective {
     @Input('matSidenavToggler') id;
 
-    constructor(private matSidenavService: MatSidenavHelperService) {
-    }
+    constructor(private matSidenavService: MatSidenavHelperService) {}
 
     @HostListener('click')
     onClick() {

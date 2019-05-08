@@ -3,6 +3,7 @@
  * once.
  */
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+
 import { SharedModule } from '../shared/shared.module';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,42 +22,53 @@ import { UtilitiesService } from './services/utils.service';
 import { AppStoreModule } from './store/app-store.module';
 
 @NgModule({
-  declarations: [
-    NavbarComponent,
-    ConfirmComponent,
-    LogoutComponent,
-    FooterComponent,
-    SettingsPannelComponent,
-    InfoboothComponent,
-    NotificationsComponent,
-    MobileSidenavComponent
-  ],
-  imports: [SharedModule, AppStoreModule],
-  exports: [
-    NavbarComponent,
-    ConfirmComponent,
-    FooterComponent,
-    SettingsPannelComponent,
-    InfoboothComponent,
-    NotificationsComponent,
-    MobileSidenavComponent,
-    //CUSTOM NGRX Module
-    AppStoreModule
-  ],
-  providers: [ConfirmService, ExceptionService, HttpErrorInterceptorProvider, InfoboothService, UtilitiesService],
-  entryComponents: [ConfirmComponent],
-  bootstrap: []
+    declarations: [
+        NavbarComponent,
+        ConfirmComponent,
+        LogoutComponent,
+        FooterComponent,
+        SettingsPannelComponent,
+        InfoboothComponent,
+        NotificationsComponent,
+        MobileSidenavComponent,
+    ],
+    imports: [
+        SharedModule,
+        AppStoreModule,
+    ],
+    exports: [
+        NavbarComponent,
+        ConfirmComponent,
+        FooterComponent,
+        SettingsPannelComponent,
+        InfoboothComponent,
+        NotificationsComponent,
+        MobileSidenavComponent,
+        //CUSTOM NGRX Module
+        AppStoreModule,
+    ],
+    providers: [
+        ConfirmService,
+        ExceptionService,
+        HttpErrorInterceptorProvider,
+        InfoboothService,
+        UtilitiesService,
+    ],
+    entryComponents: [
+        ConfirmComponent,
+    ],
+    bootstrap: [],
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
-  // Ensure that CoreModule is only loaded into AppModule
+    // Ensure that CoreModule is only loaded into AppModule
 
-  // Looks for the module in the parent injector to see if it's already been loaded (only want
-  // it loaded once)
-  constructor(
-    @Optional()
-    @SkipSelf()
-    parentModule: CoreModule
-  ) {
-    super(parentModule);
-  }
+    // Looks for the module in the parent injector to see if it's already been loaded (only want
+    // it loaded once)
+    constructor(
+        @Optional()
+        @SkipSelf()
+        parentModule: CoreModule
+    ) {
+        super(parentModule);
+    }
 }

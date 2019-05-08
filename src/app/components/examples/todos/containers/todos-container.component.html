@@ -1,30 +1,38 @@
 <div class="container" fxLayout="column" fxLayoutGap="24px">
   <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex.gt-md="60" fxFlex="100" class="mat-elevation-z2" style="padding: 5px 16px 5px 16px; background-color: white">
+    <div class="mat-elevation-z2" fxFlex.gt-md="60" fxFlex="100" style="padding:
+      5px 16px 5px 16px; background-color: white">
       <app-add-todo (emitOnAddTodo)=onAddTodo($event)></app-add-todo>
     </div>
   </div>
   <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxLayout="column" fxFlex.gt-md="40" fxFlex="60">
+    <div fxFlex.gt-md="40" fxFlex="60" fxLayout="column">
       <h2 class="bottom-margin-zero">
         Todo List
-        <button [disabled]="isRemoveDoneTodosDisabled" (click)="onRemoveDoneTodos()" matTooltip="Remove Done Todos"
-          matTooltipPosition="after" mat-icon-button class="todos-filter" color="warn">
+        <button (click)="onRemoveDoneTodos()"
+          [disabled]="isRemoveDoneTodosDisabled" class="todos-filter"
+          color="warn" mat-icon-button matTooltip="Remove Done Todos"
+          matTooltipPosition="after">
           <mat-icon svgIcon="delete"></mat-icon>
         </button>
-        <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
-          <mat-icon fontSet="fas" fontIcon="fa-filter"></mat-icon>
+        <button [matMenuTriggerFor]="todosFilter" class="todos-filter"
+          mat-icon-button>
+          <mat-icon fontIcon="fa-filter" fontSet="fas"></mat-icon>
         </button>
-        <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
-          <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: filterType === 'ALL' }">
+        <mat-menu #todosFilter="matMenu" class="todos-filter-menu-overlay"
+          xPosition="before">
+          <button (click)="onFilterTodos('ALL')" [ngClass]="{
+            active: filterType === 'ALL' }" mat-menu-item>
             <mat-icon svgIcon="done_all"></mat-icon>
             <span>All</span>
           </button>
-          <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: filterType === 'DONE' }">
+          <button (click)="onFilterTodos('DONE')" [ngClass]="{
+            active: filterType === 'DONE' }" mat-menu-item>
             <mat-icon svgIcon="done"></mat-icon>
             <span>Done</span>
           </button>
-          <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: filterType=== 'ACTIVE' }">
+          <button (click)="onFilterTodos('ACTIVE')" [ngClass]="{
+            active: filterType=== 'ACTIVE' }" mat-menu-item>
             <mat-icon>star</mat-icon>
             <span>Active</span>
           </button>
@@ -37,7 +45,7 @@
           </mat-chip>
         </mat-chip-list>
       </h2>
-      <app-todo-list [todos]=todos (onUpdateTodo)="onUpdateTodo($event)"></app-todo-list>
+      <app-todo-list (onUpdateTodo)="onUpdateTodo($event)" [todos]=todos></app-todo-list>
     </div>
   </div>
 </div>

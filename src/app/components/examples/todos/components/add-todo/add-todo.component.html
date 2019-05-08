@@ -1,7 +1,10 @@
 <div fxLayout="row">
-  <input matInput placeholder="Things to do..." (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()"
-    [formControl]="newTodo">
-  <button mat-mini-fab matSuffix color="primary" (click)="onAddTodo()" [disabled]="isAddTodoDisabled">
+  <input (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()"
+    [formControl]="newTodo"
+    matInput
+    placeholder="Things to do...">
+  <button (click)="onAddTodo()" [disabled]="isAddTodoDisabled" color="primary" mat-mini-fab
+    matSuffix>
     <mat-icon svgIcon="add"></mat-icon>
   </button>
 </div>

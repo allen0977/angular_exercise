@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-search-user',
-  template: `
+    selector: 'app-search-user',
+    template: `
     <div fxLayout="row" fxLayoutAlign="center center" fxShow fxHide.xs>
       <mat-icon color="primary">search</mat-icon>
       <div
@@ -19,10 +19,10 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from
       </div>
     </div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchUserComponent implements OnInit {
-  constructor() {}
+    constructor() {}
 
-  ngOnInit() {}
+    ngOnInit() {}
 }

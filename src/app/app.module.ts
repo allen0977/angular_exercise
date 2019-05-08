@@ -1,10 +1,11 @@
+import 'hammerjs';
+
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import 'hammerjs';
-// Third party Module
 import { ToastrModule } from 'ngx-toastr';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppFeatureComponent } from './components/app-feature/app-feature.component';
@@ -13,6 +14,7 @@ import { HomeModule } from './components/home/home.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
+// Third party Module
 /*
 Lazy loaded modules are not registered in app.module.
 Table Module
@@ -21,23 +23,29 @@ Examples Module
 */
 
 @NgModule({
-  declarations: [AppComponent, AppGridComponent, AppFeatureComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    SharedModule,
-    CoreModule,
-    HomeModule,
-    AppRoutingModule,
-    ToastrModule.forRoot({
-      closeButton: true,
-      newestOnTop: false,
-      positionClass: 'toast-bottom-right',
-      autoDismiss: true
-    })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        AppGridComponent,
+        AppFeatureComponent,
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        SharedModule,
+        CoreModule,
+        HomeModule,
+        AppRoutingModule,
+        ToastrModule.forRoot({
+            closeButton: true,
+            newestOnTop: false,
+            positionClass: 'toast-bottom-right',
+            autoDismiss: true,
+        }),
+    ],
+    providers: [],
+    bootstrap: [
+        AppComponent,
+    ],
 })
 export class AppModule {}

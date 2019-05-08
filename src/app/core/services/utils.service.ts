@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UtilitiesService {
-
-    constructor() {
-    }
+    constructor() {}
 
     public filterArrayByString(array, searchText) {
         if (searchText === '') {
@@ -13,7 +11,7 @@ export class UtilitiesService {
 
         searchText = searchText.toLowerCase();
 
-        return array.filter(itemObj => {
+        return array.filter((itemObj) => {
             return this.searchInObj(itemObj, searchText);
         });
     }
@@ -30,9 +28,7 @@ export class UtilitiesService {
                 if (this.searchInString(value, searchText)) {
                     return true;
                 }
-            }
-
-            else if (Array.isArray(value)) {
+            } else if (Array.isArray(value)) {
                 if (this.searchInArray(value, searchText)) {
                     return true;
                 }
@@ -65,5 +61,4 @@ export class UtilitiesService {
     public searchInString(value, searchText) {
         return value.toLowerCase().includes(searchText);
     }
-
 }

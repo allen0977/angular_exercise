@@ -1,17 +1,18 @@
 <div class="dialog-content-wrapper">
-  <mat-toolbar matDialogTitle class="m-0" style="background: transparent;">
+  <mat-toolbar class="m-0" matDialogTitle style="background: transparent;">
     <div fxFlex fxLayout="row" fxLayoutAlign="space-between center">
       <span class="title dialog-title">Edit User</span>
-      <button mat-button class="mat-icon-button" (click)="dialogRef.close()" aria-label="Close dialog">
+      <button (click)="dialogRef.close()" aria-label="Close dialog" class="mat-icon-button"
+        mat-button>
         <mat-icon>close</mat-icon>
       </button>
     </div>
   </mat-toolbar>
 
-  <div mat-dialog-content class="p-0 m-0">
+  <div class="p-0 m-0" mat-dialog-content>
     <div class="p-24">
       <!-- USER FULL NAME -->
-      <div fxLayout="row" fxLayoutAlign="start center" class="w-100-p">
+      <div class="w-100-p" fxLayout="row" fxLayoutAlign="start center">
         <mat-form-field class="w-100-p">
           <input matInput placeholder="User Name" readonly />
         </mat-form-field>
@@ -19,7 +20,7 @@
       <!-- / USER FULL NAME -->
 
       <!-- PERMISSION -->
-      <div fxLayout="row" fxLayoutAlign="start center" class="w-100-p">
+      <div class="w-100-p" fxLayout="row" fxLayoutAlign="start center">
         <mat-form-field class="w-100-p">
           <mat-select>
             <mat-option value="User">User</mat-option>
@@ -29,8 +30,8 @@
       </div>
       <!-- / PERMISSION -->
 
-      <div fxLayout="row" fxFill fxLayoutAlign="end center">
-        <button mat-raised-button color="primary">SAVE</button>
+      <div fxFill fxLayout="row" fxLayoutAlign="end center">
+        <button color="primary" mat-raised-button>SAVE</button>
       </div>
     </div>
   </div>

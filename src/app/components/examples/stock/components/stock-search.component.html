@@ -1,4 +1,6 @@
 <mat-form-field fxFlex>
-  <input matInput [value]="defaultStockSymbol" (keyup)="onStockSymbolChange($event.target.value)" placeholder="Stock Symbol...">
+  <input (keyup)="onStockSymbolChange($event.target.value)" [value]="defaultStockSymbol"
+    matInput placeholder="Stock
+    Symbol...">
   <mat-hint><i>Enter valid stock symbols like: VRTX, AMZN, FB, etc.</i></mat-hint>
 </mat-form-field>

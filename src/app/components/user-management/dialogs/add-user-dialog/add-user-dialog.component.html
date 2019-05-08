@@ -1,25 +1,26 @@
 <div class="dialog-content-wrapper">
-  <mat-toolbar matDialogTitle class="m-0" style="background: transparent;">
+  <mat-toolbar class="m-0" matDialogTitle style="background: transparent;">
     <div fxFlex fxLayout="row" fxLayoutAlign="space-between center">
       <span class="title dialog-title">Add User</span>
-      <button mat-button class="mat-icon-button" (click)="dialogRef.close()" aria-label="Close dialog">
+      <button (click)="dialogRef.close()" aria-label="Close dialog" class="mat-icon-button"
+        mat-button>
         <mat-icon>close</mat-icon>
       </button>
     </div>
   </mat-toolbar>
 
-  <div mat-dialog-content class="p-0 m-0">
+  <div class="p-0 m-0" mat-dialog-content>
     <div class="px-24">
       <form>
         <!-- EMPLOYEE SEARCH -->
         <mat-form-field class="w-100-p">
           <input
-            matInput
-            type="text"
-            placeholder="Search Employees"
-            [matAutocomplete]="auto"
             [formControl]="userCtrl"
-          />
+            [matAutocomplete]="auto"
+            matInput
+            placeholder="Search Employees"
+            type="text"
+            />
 
           <mat-autocomplete #auto="matAutocomplete">
             <div>
@@ -32,7 +33,7 @@
         <!-- / EMPLOYEE SEARCH -->
 
         <!-- PERMISSION -->
-        <div fxLayout="row" fxLayoutAlign="start center" class="w-100-p">
+        <div class="w-100-p" fxLayout="row" fxLayoutAlign="start center">
           <mat-form-field class="w-100-p">
             <mat-select>
               <mat-option value="User">User</mat-option>
@@ -43,8 +44,8 @@
         <!-- / PERMISSION -->
       </form>
 
-      <div fxLayout="row" fxFill fxLayoutAlign="end center">
-        <button mat-raised-button color="primary">ADD</button>
+      <div fxFill fxLayout="row" fxLayoutAlign="end center">
+        <button color="primary" mat-raised-button>ADD</button>
       </div>
     </div>
   </div>

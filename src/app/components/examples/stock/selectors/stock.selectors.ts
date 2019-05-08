@@ -1,6 +1,8 @@
 import { createSelector } from '@ngrx/store';
+
 import * as fromExample from '../../examples.state';
 import { StockMarketState } from '../models/stock.model';
+
 /**
  * Every reducer module exports selector functions, however child reducers
  * have no knowledge of the overall state tree. To make them usable, we
@@ -11,6 +13,6 @@ import { StockMarketState } from '../models/stock.model';
  * together to select different pieces of state.
  */
 export const selectStockMarket = createSelector(
-  fromExample.selectExamples,
-  (state: fromExample.ExamplesState): StockMarketState => state.stock
+    fromExample.selectExamples,
+    (state: fromExample.ExamplesState): StockMarketState => state.stock
 );

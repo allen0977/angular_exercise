@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-examples',
-  templateUrl: './examples.component.html',
-  styleUrls: ['./examples.component.css']
+    selector: 'app-examples',
+    templateUrl: './examples.component.html',
+    styleUrls: [
+        './examples.component.css',
+    ],
 })
 export class ExamplesComponent implements OnInit {
-  examples = [
-    {
-      path: 'todos',
-      label: 'Todos'
-    },
-    {
-      path: 'stocks',
-      label: 'Stock'
-    }
-  ];
+    examples = [
+        {
+            label: 'Todos',
+            path: 'todos',
+        },
+        {
+            label: 'Stock',
+            path: 'stocks',
+        },
+    ];
 
-  constructor() {}
+    constructor() {}
 
-  ngOnInit() {}
+    ngOnInit() {}
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { ExamplesComponent } from './examples.component';
 import { StockPriceCardComponent } from './stock/components/stock-price-card.component';
 import { StockSearchComponent } from './stock/components/stock-search.component';
@@ -10,40 +11,44 @@ import { TodoListComponent } from './todos/components/todo-list/todo-list.compon
 import { TodosContainerComponent } from './todos/containers/todos-container.component';
 
 const exmapleComponentRoutes: Routes = [
-  {
-    path: '',
-    component: ExamplesComponent,
-    children: [
-      {
+    {
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'todos',
+            },
+            {
+                component: TodosContainerComponent,
+                path: 'todos',
+            },
+            {
+                component: StockContainerComponent,
+                path: 'stocks',
+                resolve: { stockData: StockComponentResolver },
+            },
+        ],
+        component: ExamplesComponent,
         path: '',
-        redirectTo: 'todos',
-        pathMatch: 'full'
-      },
-      {
-        path: 'todos',
-        component: TodosContainerComponent
-      },
-      {
-        path: 'stocks',
-        component: StockContainerComponent,
-        resolve: { stockData: StockComponentResolver }
-      }
-    ]
-  }
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(exmapleComponentRoutes)],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forChild(exmapleComponentRoutes),
+    ],
+    exports: [
+        RouterModule,
+    ],
 })
 export class ExamplesRoutingModule {
-  static components = [
-    ExamplesComponent,
-    TodosContainerComponent,
-    StockContainerComponent,
-    AddTodoComponent,
-    TodoListComponent,
-    StockPriceCardComponent,
-    StockSearchComponent
-  ];
+    static components = [
+        ExamplesComponent,
+        TodosContainerComponent,
+        StockContainerComponent,
+        AddTodoComponent,
+        TodoListComponent,
+        StockPriceCardComponent,
+        StockSearchComponent,
+    ];
 }

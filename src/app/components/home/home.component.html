@@ -1,8 +1,8 @@
-<div id="home" class="w-100-p" fxLayout="column" fxLayoutAlign="start start">
+<div class="w-100-p" fxLayout="column" fxLayoutAlign="start start" id="home">
+  <div class="content p-24 w-100-p" fxFlex="100" fxLayout="row wrap"
+    fxLayoutAlign="start start">
 
-  <div class="content p-24 w-100-p" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start start">
-
-    <div class="p-8 w-100-p" fxFlex="100" fxFlex.gt-lg="50" fxFlex.gt-md="50">
+    <div class="p-8 w-100-p" fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex="100">
       <mat-card class="w-100-p" fxLayout="column" fxLayoutAlign="start start">
         <mat-card-header>
           <mat-card-title>Welcome to Angular Seed Project (NGRX)</mat-card-title>
@@ -13,13 +13,18 @@
               <h4>Features:</h4>
               <ul>
                 <li>Common Grid Layout</li>
-                <li>Lazy Loaded Table Component with pagination, sorting and filtering features.</li>
+                <li>Lazy Loaded Table Component with pagination, sorting and
+                  filtering features.</li>
                 <li>Defined set of
-                  <a href='http://svn.vrtx.com/viewvc/webdev/angular_skeleton/trunk/src/app/core/services'>Core Services</a>
+                  <a
+                    href='http://svn.vrtx.com/viewvc/webdev/angular_skeleton/trunk/src/app/core/services'>Core
+                    Services</a>
                   - HttpInterceptor, Exception and Toast services
                 </li>
-                <li>Defined set of Core and Shared Services and app organization as per Angular Style guide.</li>
-                <li>List of Library used and documentation Link under Feature component</li>
+                <li>Defined set of Core and Shared Services and app organization
+                  as per Angular Style guide.</li>
+                <li>List of Library used and documentation Link under Feature
+                  component</li>
               </ul>
             </li>
           </ul>
@@ -27,7 +32,7 @@
       </mat-card>
     </div>
 
-    <div class="p-8 w-100-p" fxFlex="100" fxFlex.gt-lg="50" fxFlex.gt-md="50">
+    <div class="p-8 w-100-p" fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex="100">
       <mat-card class="w-100-p" fxLayout="column" fxLayoutAlign="start start">
         <mat-card-header>
           <mat-card-title>Core Actions</mat-card-title>
@@ -36,30 +41,34 @@
         <mat-card-content>
           <div fxLayout="row wrap" fxLayoutGap="20px">
             <div fxLayout="row">
-              <div fxFlex class="p-4">
+              <div class="p-4" fxFlex>
                 <h4>Confirm</h4>
-                <button mat-raised-button (click)="showConfirmDialog()">Confirm</button>
+                <button (click)="showConfirmDialog()" mat-raised-button>Confirm</button>
               </div>
-              <div fxFlex class="p-4">
+              <div class="p-4" fxFlex>
                 <h4>Colors</h4>
-                <button mat-raised-button (click)="openColorSheet()">Colors</button>
+                <button (click)="openColorSheet()" mat-raised-button>Colors</button>
               </div>
             </div>
-            <div fxLayout="row" fxFlex>
+            <div fxFlex fxLayout="row">
               <div fxLayout="column">
                 <h4>Toast Messages button</h4>
                 <div fxLayout="row wrap">
-                  <div class="button p-4" fxLayout="column" fxFlex>
-                    <button style="color:#2F96B4" mat-raised-button (click)="showInfo()">Info Toast</button>
+                  <div class="button p-4" fxFlex fxLayout="column">
+                    <button (click)="showInfo()" mat-raised-button
+                      style="color:#2F96B4">Info Toast</button>
                   </div>
-                  <div class="button p-4" fxLayout="column" fxFlex>
-                    <button style="color:#F89406" mat-raised-button (click)="showWarning()">Warning Toast</button>
+                  <div class="button p-4" fxFlex fxLayout="column">
+                    <button (click)="showWarning()" mat-raised-button
+                      style="color:#F89406">Warning Toast</button>
                   </div>
-                  <div class="button p-4" fxLayout="column" fxFlex>
-                    <button style="color:#51A351" mat-raised-button (click)="showSuccess()">Success Toast</button>
+                  <div class="button p-4" fxFlex fxLayout="column">
+                    <button (click)="showSuccess()" mat-raised-button
+                      style="color:#51A351">Success Toast</button>
                   </div>
-                  <div class="button p-4" fxLayout="column" fxFlex>
-                    <button style="color:#BD362F" mat-raised-button (click)="showError()">Error Toast</button>
+                  <div class="button p-4" fxFlex fxLayout="column">
+                    <button (click)="showError()" mat-raised-button
+                      style="color:#BD362F">Error Toast</button>
                   </div>
                 </div>
               </div>

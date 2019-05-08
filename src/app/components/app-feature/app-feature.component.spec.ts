@@ -1,25 +1,28 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 
 import { AppFeatureComponent } from './app-feature.component';
 
 describe('AppFeatureComponent', () => {
-  let component: AppFeatureComponent;
-  let fixture: ComponentFixture<AppFeatureComponent>;
+    let component: AppFeatureComponent;
+    let fixture: ComponentFixture<AppFeatureComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AppFeatureComponent ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(
+        async(() => {
+            TestBed.configureTestingModule({
+                declarations: [
+                    AppFeatureComponent,
+                ],
+            }).compileComponents();
+        })
+    );
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AppFeatureComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AppFeatureComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

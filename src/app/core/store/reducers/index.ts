@@ -3,22 +3,24 @@
  */
 import { ActivatedRouteSnapshot, Params, RouterStateSnapshot } from '@angular/router';
 import * as fromRouter from '@ngrx/router-store';
-import { ActionReducerMap, createFeatureSelector, MetaReducer } from '@ngrx/store';
-import { environment } from 'environments/environment';
+import { ActionReducerMap, MetaReducer, createFeatureSelector } from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
+
+import { environment } from '../../../../environments/environment';
+
 /**
  * storeFreeze prevents state from being mutated. When mutation occurs, an
  * exception will be thrown. This is useful during development mode to
  * ensure that none of the reducers accidentally mutates the state.
  */
-import { storeFreeze } from 'ngrx-store-freeze';
 // Custom Meta Reducer
 // import { logger } from './debug-meta-reducer';
 
 // Interface for the Router State.
 export interface RouterStateUrl {
-  url: string;
-  queryParams: Params;
-  params: Params;
+    params: Params;
+    queryParams: Params;
+    url: string;
 }
 
 /**
@@ -27,7 +29,7 @@ export interface RouterStateUrl {
  * This is the State of the entire application.
  */
 export interface State {
-  router: fromRouter.RouterReducerState<RouterStateUrl>;
+    router: fromRouter.RouterReducerState<RouterStateUrl>;
 }
 
 /**
@@ -36,7 +38,7 @@ export interface State {
  * and the current or initial state and return a new immutable state.
  */
 export const reducers: ActionReducerMap<State> = {
-  router: fromRouter.routerReducer
+    router: fromRouter.routerReducer,
 };
 
 /**
@@ -44,7 +46,11 @@ export const reducers: ActionReducerMap<State> = {
  * the root meta-reducer. To add more meta-reducers, provide an array of meta-reducers
  * that will be composed to form the root meta-reducer.
  */
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [storeFreeze] : [];
+export const metaReducers: MetaReducer<State>[] = !environment.production
+    ? [
+          storeFreeze,
+      ]
+    : [];
 
 // Feature Selector for Router
 export const getRouterState = createFeatureSelector<fromRouter.RouterReducerState<RouterStateUrl>>('routerReducer');
@@ -56,16 +62,16 @@ export const getRouterState = createFeatureSelector<fromRouter.RouterReducerStat
  * Read More here: https://github.com/ngrx/platform/blob/master/docs/router-store/api.md#custom-router-state-serializer
  */
 export class CustomSerializer implements fromRouter.RouterStateSerializer<RouterStateUrl> {
-  serialize(routerState: RouterStateSnapshot): RouterStateUrl {
-    const { url } = routerState; // Equivalent const url = routerState.url;
-    const { queryParams } = routerState.root;
-    // Here we are hijacking Angular Router Tree and adding few properties in our ngrx state tree.
-    let state: ActivatedRouteSnapshot = routerState.root;
-    // loop over Angular Router State tree
-    while (state.firstChild) {
-      state = state.firstChild;
+    serialize(routerState: RouterStateSnapshot): RouterStateUrl {
+        const { url } = routerState; // Equivalent const url = routerState.url;
+        const { queryParams } = routerState.root;
+        // Here we are hijacking Angular Router Tree and adding few properties in our ngrx state tree.
+        let state: ActivatedRouteSnapshot = routerState.root;
+        // loop over Angular Router State tree
+        while (state.firstChild) {
+            state = state.firstChild;
+        }
+        const { params } = state;
+        return { params, queryParams, url };
     }
-    const { params } = state;
-    return { url, queryParams, params };
-  }
 }

@@ -1,19 +1,21 @@
-<button mat-icon-button
-        type="button"
-        [matMenuTriggerFor]="notificationsMenu"
-        (click)="getNotifications()">
+<button (click)="getNotifications()"
+    [matMenuTriggerFor]="notificationsMenu"
+    mat-icon-button
+    type="button">
     <mat-icon>notifications</mat-icon>
-    <span *ngIf="numNotifications>0" [matBadge]="numNotifications" matBadgeColor="warn"></span>
+    <span *ngIf="numNotifications>0" [matBadge]="numNotifications"
+        matBadgeColor="warn"></span>
 </button>
 
 <mat-menu #notificationsMenu="matMenu" class="notifications-menu">
 
-    <div fxLayout="column" fxLayoutAlign="start start" class="content w-100-p">
-        <div class="notification p-12 mt-4" fxLayout="row" fxLayoutAlign="start center" *ngFor="let n of notifications" fxFill>
-           <div fxLayout="column wrap">
-             <div class="title" fxLayout="row">{{ n.title }}</div>
-             <div class="description mt-4" fxLayout="row">{{ n.description }}</div>
-           </div>
+    <div class="content w-100-p" fxLayout="column" fxLayoutAlign="start start">
+        <div *ngFor="let n of notifications" class="notification p-12 mt-4" fxFill fxLayout="row" fxLayoutAlign="start
+            center">
+            <div fxLayout="column wrap">
+                <div class="title" fxLayout="row">{{ n.title }}</div>
+                <div class="description mt-4" fxLayout="row">{{ n.description }}</div>
+            </div>
         </div>
     </div>
 

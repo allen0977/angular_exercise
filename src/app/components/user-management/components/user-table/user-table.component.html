@@ -1,20 +1,16 @@
-<div class="users-tables" #userTable>
+<div #userTable class="users-tables">
   <ngx-datatable
-    class="material"
-    [rows]="users"
     [columnMode]="'force'"
-    [headerHeight]="48"
     [footerHeight]="56"
-    [rowHeight]="'auto'"
-    [scrollbarH]="true"
+    [headerHeight]="48"
     [reorderable]="true"
-  >
+    [rowHeight]="'auto'"
+    [rows]="users"
+    [scrollbarH]="true"
+    class="material">
     <ngx-datatable-column name="Name" prop="fullName"> </ngx-datatable-column>
-
     <ngx-datatable-column name="Email" prop="email"> </ngx-datatable-column>
-
     <ngx-datatable-column name="Role" prop="role"> </ngx-datatable-column>
-
     <ngx-datatable-column name="id">
       <ng-template let-column="column" ngx-datatable-header-template>
         Actions

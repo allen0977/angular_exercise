@@ -1,22 +1,24 @@
 <div fxLayout="row">
-  <mat-toolbar color="#F5F5F5" class="custom-pad mat-elevation-z6" fxFlex="100">
+  <mat-toolbar class="custom-pad mat-elevation-z6" color="#F5F5F5" fxFlex="100">
     <div fxFlex fxLayoutAlign="start center">
       <button fxHide fxShow.xs mat-icon-button matSidenavToggler="mobile">
         <mat-icon>menu</mat-icon>
       </button>
-      <span fxShow fxHide.xs>
-        <img src="../assets/img/logo/LaunchLogoAngular.png" class="logo cursorpointer" routerLink="/home" />
+      <span fxHide.xs fxShow>
+        <img class="logo
+          cursorpointer" routerLink="/home" src="../assets/img/logo/LaunchLogoAngular.png" />
       </span>
       <span>
-        <h2 class="applicationtitle ml-8" fxShow fxHide.xs>
+        <h2 class="applicationtitle ml-8" fxHide.xs fxShow>
           ANGULAR DEMO APP
         </h2>
       </span>
     </div>
     <div fxFlex="60" fxLayout="row" fxLayoutAlign="center center">
-      <span class="naviconblock cursorpointer" fxShow="false" fxShow.gt-sm="true">
+      <span class="naviconblock cursorpointer" fxShow.gt-sm="true"
+        fxShow="false">
         <a class="link" routerLink="home" routerLinkActive="active">
-          <mat-icon svgIcon="home" class="navicon noselect"></mat-icon>
+          <mat-icon class="navicon noselect" svgIcon="home"></mat-icon>
           <p class="navicontext noselect">Home</p>
         </a>
       </span>
@@ -50,21 +52,21 @@
       <app-notifications class="mr-8"></app-notifications>
       <app-infobooth class="mr-8"></app-infobooth>
 
-      <span fxHide fxShow.gt-sm fxShow.gt-xs class="userimage-wrapper">
+      <span class="userimage-wrapper" fxHide fxShow.gt-sm fxShow.gt-xs>
         <mat-icon class="userimage-icon">person</mat-icon>
       </span>
-      <span fxShow="false" fxShow.gt-sm="true" class="username-wrapper">
+      <span class="username-wrapper" fxShow.gt-sm="true" fxShow="false">
         <small class="username-small">Welcome!</small>
         <br />
         User Name
       </span>
-      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <button [matMenuTriggerFor]="appMenu" mat-icon-button>
         <mat-icon>more_vert</mat-icon>
       </button>
     </div>
 
     <mat-menu #appMenu="matMenu">
-      <button mat-menu-item [routerLink]="['/user-management']">
+      <button [routerLink]="['/user-management']" mat-menu-item>
         <mat-icon>group</mat-icon>
         <span>User Management</span>
       </button>
@@ -72,7 +74,8 @@
         <mat-icon>settings</mat-icon>
         <span>App Settings</span>
       </button>
-      <button mat-menu-item [routerLink]="['/logout']" routerLinkActive="active">
+      <button [routerLink]="['/logout']" mat-menu-item
+        routerLinkActive="active">
         <mat-icon>power_settings_new</mat-icon>
         <span>Log Off</span>
       </button>
