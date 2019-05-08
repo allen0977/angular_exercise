@@ -1,0 +1,32 @@
+<div class="users-tables" #userTable>
+  <ngx-datatable
+    class="material"
+    [rows]="users"
+    [columnMode]="'force'"
+    [headerHeight]="48"
+    [footerHeight]="56"
+    [rowHeight]="'auto'"
+    [scrollbarH]="true"
+    [reorderable]="true"
+  >
+    <ngx-datatable-column name="Name" prop="fullName"> </ngx-datatable-column>
+
+    <ngx-datatable-column name="Email" prop="email"> </ngx-datatable-column>
+
+    <ngx-datatable-column name="Role" prop="role"> </ngx-datatable-column>
+
+    <ngx-datatable-column name="id">
+      <ng-template let-column="column" ngx-datatable-header-template>
+        Actions
+      </ng-template>
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>

@@ -1,0 +1,4 @@
+{
+  "todos": [{ "id": 1, "name": "Do Something", "done": false }],
+  "filter": "ALL"
+}

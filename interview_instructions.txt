@@ -1,0 +1,64 @@
+We have a running Angular 7 Skeleton app with NGRX as state managemnt library. This application is all setup to run with below mentioned libraries.
+
+Library used in this app:
+-------------------------
+
+Main:
+Angular v7
+
+State Managemnt:
+NGRX v7
+
+UI Components/Style:
+Angular Material
+Angular Flex-Layout
+
+Tables:
+@swimlane/ngx-datatable
+Angular Material Tables
+
+While working on a particular component you should create everything (like components, services, reducers, actions, effects, etc) required for that component and register them in your component level Angular Module.
+
+Working Directory:
+------------------
+src/app/components/user-managemnt
+
+The UI components are already created but they do not do anything. Your task is to write underline functionalities.
+
+Task:
+-----
+
+The task is to create a user managemnt view with a set of functionalities for this app. There is already a user managemnt route defined (look on the right side of the nav bar and you will see vertical dots menu option, the first option is User Managemnt and it will open the default view). Your task is update this view to look somewhat similar to the attached screenshot (Refer to user-managemnt-view.png).
+
+Required functionalities:
+-------------------------
+
+Search:
+-------
+We should be able to filter the table by Name. It should start filtering as we type characters. In case of no match, do not display any row.
+
+Add User:
+---------
+We should be able to add new user and assign a role.
+Available Roles:
+1) Admin
+2) User
+
+Edit Role:
+----------
+We should be able to edit the assigned role to user.
+
+Delete:
+-------
+We should be able to delete a record from the table.
+
+
+Input JSON data:
+----------------
+`src/assets/dummydata` contains 2 input `json` files.
+1) users.json - Used for displaying set of users in the view.
+2) employees.json - Use this json data for `Add User`.
+
+We expect you to write the above mentioned functionalities using NGRX and also following good Angular practices. 
+
+Happy Coding!

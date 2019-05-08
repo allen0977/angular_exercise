@@ -1,0 +1,15 @@
+<div class="w-100-p p-24" fxLayout="column" id="users">
+  <!-- HEADER -->
+  <div class="py-16 border-bottom title" fxLayout="row"
+    fxLayoutAlign="space-between center">
+    <div class="h3" fxHide.xs fxShow style="font-size: 22px;">User Management</div>
+    <app-search-user></app-search-user>
+    <app-add-user (click)="openAddUserDialog('add')"></app-add-user>
+  </div>
+  <!-- / HEADER -->
+  <!-- USER TABLE -->
+  <div class="mt-12" style="height: auto">
+    <app-user-table></app-user-table>
+  </div>
+  <!-- / USER TABLE -->
+</div>

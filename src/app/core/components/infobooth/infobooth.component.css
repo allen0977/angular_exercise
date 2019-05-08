@@ -1,0 +1,20 @@
+.info-booth-menu {
+    width: 430px;
+    background-color: white;
+}
+
+.mat-menu-content {
+    padding: 0;
+}
+
+.apps {
+    overflow-y: scroll;
+    min-height: 200px;
+    height: auto;
+    background-color: white;
+}
+
+.app:hover {
+    background-color: lightgrey;
+}
+

@@ -1,0 +1,43 @@
+#features {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  padding-top: 16px;
+}
+
+.content {
+  margin-bottom: 30px;
+}
+
+.card {
+  height: 250px;
+  max-height: 250px;
+  min-height: 250px;
+}
+
+code {
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: right;
+  font-size: 12px;
+  padding: 4px;
+  margin-top: 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+  background-color: lightblue;
+}
+
+a mat-icon {
+  position: relative;
+  top: 2px;
+  font-size: 16px;
+}
+
+a[mat-icon-button] {
+  position: relative;
+  top: -4px;
+  left: 5px;
+}

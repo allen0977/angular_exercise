@@ -1,0 +1,24 @@
+<button mat-icon-button type="button" [matMenuTriggerFor]="appsMenu">
+    <mat-icon>apps</mat-icon>
+</button>
+
+<mat-menu #appsMenu="matMenu" class="info-booth-menu">
+
+    <header class="p-4" fxLayout="row" fxLayoutAlign="center center">
+        <form fxLayout="row" fxLayoutAlign="center center">
+            <mat-icon class="mr-4">search</mat-icon>
+            <mat-form-field>
+                <input matInput [formControl]="searchInput" placeholder="Search apps" fxFlex (click)="$event.stopPropagation();">
+            </mat-form-field>
+        </form>
+    </header>
+
+    <div fxLayout="row wrap" fxLayoutAlign="start start" class="apps">
+        <div class="app p-12" fxLayout="column" fxLayoutAlign="center center" *ngFor="let app of apps" fxFlex="33">
+            <a [href]="app.link" target="_blank">
+                <img [src]="app.path" [alt]="app.name" height="40" width="70">
+            </a>
+        </div>
+    </div>
+
+</mat-menu>

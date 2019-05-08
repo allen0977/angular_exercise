@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{(stockData$ | async)?.stock?.primaryExchange}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout fxLayoutAlign="center center" *ngIf="(stockData$ | async)?.loading">
+      <mat-spinner [diameter]="60"></mat-spinner>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between" *ngIf="(stockData$ | async)?.stock">
+      <span><h2>{{(stockData$ | async)?.stock.stockSymbol}}</h2></span>
+      <span><h2>{{(stockData$ | async)?.stock.stockValue}} {{currency}}</h2></span>
+    </div>
+    <div fxLayout fxLayoutAlign="center center" *ngIf="(stockData$ | async)?.error">
+      <mat-icon color="warn">warning</mat-icon>
+      <h3>Unknown Stock Symbol</h3>
+    </div>
+  </mat-card-content>
+</mat-card>

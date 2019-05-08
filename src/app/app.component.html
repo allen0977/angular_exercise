@@ -1,0 +1,38 @@
+<mat-sidenav-container>
+
+  <!-- MOBILE NAVBAR -->
+  <mat-sidenav matSidenavHelper="mobile" position="start">
+    <app-mobile-sidenav></app-mobile-sidenav>
+  </mat-sidenav>
+  <!-- / MOBILE NAVBAR -->
+
+  <div id="app">
+
+    <!-- NAVBAR -->
+    <ng-container>
+      <app-navbar class="above"></app-navbar>
+    </ng-container>
+    <!-- / NAVBAR -->
+    <!-- Progress bar that shows up on a route change (Only if there is some delay) -->
+    <mat-progress-bar *ngIf="loading" mode="indeterminate" color="primary"></mat-progress-bar>
+    <!-- CONTENT -->
+    <div class="content-wrapper" fxLayout="column">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- / CONTENT -->
+
+    <!-- FOOTER -->
+    <ng-container class="footer">
+      <app-footer></app-footer>
+    </ng-container>
+    <!-- / FOOTER -->
+
+  </div>
+
+  <!-- SETTINGS PANEL -->
+  <mat-sidenav matSidenavHelper="settings" position="end">
+    <app-settings-pannel></app-settings-pannel>
+  </mat-sidenav>
+  <!-- / SETTINGS PANEL -->
+
+</mat-sidenav-container>

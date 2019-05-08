@@ -1,0 +1,60 @@
+{
+  "data": {
+    "apps": [
+      {
+        "id": 1,
+        "path": "assets/img/app_launcher/ALL_APPS.jpg",
+        "name": "All Apps",
+        "link": "https://vnet--simpplr.na73.visual.force.com/apex/Simpplr__SiteContent#/site/a0q1I000001RPUaQAO/page/a0k1I00000lBGXnQAO"
+      },
+      {
+        "id": 2,
+        "path": "assets/img/app_launcher/concur.jpg",
+        "name": "Concur",
+        "link": "http://concur.vrtx.com"
+      },
+      {
+        "id": 3,
+        "path": "assets/img/app_launcher/CONTRACTING.jpg",
+        "name": "Contracting",
+        "link": "http://contracting.vrtx.com"
+      },
+      {
+        "id": 4,
+        "path": "assets/img/app_launcher/PROCUREMENT.jpg",
+        "name": "Procurement",
+        "link": "http://procurement.vrtx.com"
+      },
+      {
+        "id": 5,
+        "path": "assets/img/app_launcher/service_now.jpg",
+        "name": "Service Now",
+        "link": "http://servicenow.vrtx.com"
+      },
+      {
+        "id": 6,
+        "path": "assets/img/app_launcher/SHIPPING.jpg",
+        "name": "Shipping",
+        "link": "http://cfprodcb.vrtx.com/"
+      },
+      {
+        "id": 7,
+        "path": "assets/img/app_launcher/TRAVEL.jpg",
+        "name": "Travel",
+        "link": "https://hub.fcm.travel/Home/Dashboard"
+      },
+      {
+        "id": 8,
+        "path": "assets/img/app_launcher/VLEARN.png",
+        "name": "VLearn",
+        "link": "http://vlearn.vrtx.com"
+      },
+      {
+        "id": 9,
+        "path": "assets/img/app_launcher/workday.jpg",
+        "name": "Workday",
+        "link": "http://workday.vrtx.com"
+      }
+    ]
+  }
+}

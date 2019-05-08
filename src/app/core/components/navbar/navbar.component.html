@@ -1,0 +1,81 @@
+<div fxLayout="row">
+  <mat-toolbar color="#F5F5F5" class="custom-pad mat-elevation-z6" fxFlex="100">
+    <div fxFlex fxLayoutAlign="start center">
+      <button fxHide fxShow.xs mat-icon-button matSidenavToggler="mobile">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span fxShow fxHide.xs>
+        <img src="../assets/img/logo/LaunchLogoAngular.png" class="logo cursorpointer" routerLink="/home" />
+      </span>
+      <span>
+        <h2 class="applicationtitle ml-8" fxShow fxHide.xs>
+          ANGULAR DEMO APP
+        </h2>
+      </span>
+    </div>
+    <div fxFlex="60" fxLayout="row" fxLayoutAlign="center center">
+      <span class="naviconblock cursorpointer" fxShow="false" fxShow.gt-sm="true">
+        <a class="link" routerLink="home" routerLinkActive="active">
+          <mat-icon svgIcon="home" class="navicon noselect"></mat-icon>
+          <p class="navicontext noselect">Home</p>
+        </a>
+      </span>
+      <!--<span class="naviconblock cursorpointer" fxShow="false" fxShow.gt-sm="true">
+        <a class="link" routerLink='grid' routerLinkActive="active">
+          <mat-icon svgIcon="grid" class="navicon noselect"></mat-icon>
+          <p class="navicontext noselect">Grid</p>
+        </a>
+      </span>
+      <span class="naviconblock cursorpointer" fxShow="false" fxShow.gt-sm="true">
+        <a class="link" routerLink='table' routerLinkActive="active">
+          <mat-icon svgIcon="table" class="navicon noselect"></mat-icon>
+          <p class="navicontext noselect">Table</p>
+        </a>
+      </span>
+      <span class="naviconblock cursorpointer" fxShow="false" fxShow.gt-sm="true">
+        <a class="link" routerLink='feature' routerLinkActive="active">
+          <mat-icon svgIcon="feature" class="navicon noselect"></mat-icon>
+          <p class="navicontext noselect">Feature</p>
+        </a>
+      </span>
+      <span class="naviconblock cursorpointer" fxShow="false" fxShow.gt-sm="true">
+        <a class="link" routerLink="examples" routerLinkActive="active">
+          <mat-icon svgIcon="examples" class="navicon noselect"></mat-icon>
+          <p class="navicontext noselect">Examples</p>
+        </a>
+      </span>-->
+    </div>
+
+    <div fxFlex fxLayoutAlign="end">
+      <app-notifications class="mr-8"></app-notifications>
+      <app-infobooth class="mr-8"></app-infobooth>
+
+      <span fxHide fxShow.gt-sm fxShow.gt-xs class="userimage-wrapper">
+        <mat-icon class="userimage-icon">person</mat-icon>
+      </span>
+      <span fxShow="false" fxShow.gt-sm="true" class="username-wrapper">
+        <small class="username-small">Welcome!</small>
+        <br />
+        User Name
+      </span>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/user-management']">
+        <mat-icon>group</mat-icon>
+        <span>User Management</span>
+      </button>
+      <button mat-menu-item matSidenavToggler="settings">
+        <mat-icon>settings</mat-icon>
+        <span>App Settings</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/logout']" routerLinkActive="active">
+        <mat-icon>power_settings_new</mat-icon>
+        <span>Log Off</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</div>

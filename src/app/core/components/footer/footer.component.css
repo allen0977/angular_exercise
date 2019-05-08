@@ -1,0 +1,10 @@
+mat-toolbar {
+    height: 30px;
+    min-height: 30px;
+    max-height: 30px;
+}
+
+.copyright, .version {
+    font-size: small;
+    color: #535c68;
+}

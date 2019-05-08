@@ -1,0 +1,9 @@
+@import './vrtx.css';
+/*@import './vrtx-colors.scss';*/
+/*@import './vrtx-themes.scss';*/
+@import './helpers.css';
+@import 'partials/_typography.css';
+@import 'partials/_spacing.css';
+@import 'plugins/ngx-datatable.css';
+@import 'https://fonts.googleapis.com/css?family=Material+Icons';
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900';

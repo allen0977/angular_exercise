@@ -1,0 +1,139 @@
+.logo {
+  height: 73px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.vertex-logo {
+  height: 40px;
+  width: auto;
+}
+
+mat-toolbar {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  position: relative;
+  z-index: 9;
+}
+
+.userimage-wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.userimage-icon {
+  color: gray;
+  padding-top: 7px;
+  padding-left: 7px;
+}
+
+.username-wrapper {
+  font-size: 0.9em;
+  line-height: 0.9;
+  padding-bottom: 7px;
+  font-weight: 300;
+}
+
+.username-small {
+  font-size: 0.65em;
+  font-weight: 100;
+}
+
+.applicationtitle {
+  font-size: 21px;
+  font-weight: 400;
+  color: #5C5C5A;
+}
+
+.naviconblock {
+  width: 100px;
+  /* margin-bottom: -7px; */
+  padding-bottom: 7px;
+}
+
+.naviconblock:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navicon {
+  display: block;
+  margin: auto;
+  width: 32px;
+  height: 32px;
+}
+
+.navicontext {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 200;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.home-margin {
+  margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .vertex-logo {
+    display: none;
+  }
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox
+Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.white-text {
+  color: white;
+}
+
+.demo-nav-bar {
+  border-bottom: 2px solid #e0e0e0;
+  /*margin-bottom: 40px;*/
+}
+
+.md-top-pad {
+  padding-top: 17px;
+}
+
+.no-left-pad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.left-pad {
+  padding-left: 16px;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+a.link {
+  color: #5C5C5A;
+}
+
+a.active {
+  color: #47959F;
+  text-decoration: none;
+}
+
+
+/* Media Query*/
+@media screen and (max-width: 599px) {
+  .logo {
+    height: 65px;
+    width: auto;
+    margin-right: 8px;
+  }
+}

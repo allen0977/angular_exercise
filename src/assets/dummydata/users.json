@@ -1,0 +1,38 @@
+{
+  "data": {
+    "users": [
+      {
+        "id": "1",
+        "firstName": "Michael",
+        "lastName": "Hawes",
+        "fullName": "Michael Hawes",
+        "email": "michael_hawes@vrtx.com",
+        "role": "Administrator"
+      },
+      {
+        "id": "2",
+        "firstName": "Sanjiv",
+        "lastName": "Kumar",
+        "fullName": "Sanjiv Kumar",
+        "email": "sanjiv_kumar@vrtx.com",
+        "role": "Administrator"
+      },
+      {
+        "id": "3",
+        "firstName": "Khuong",
+        "lastName": "Dinh",
+        "fullName": "Khuong Dinh",
+        "email": "khuong_Dinh@vrtx.com",
+        "role": "User"
+      },
+      {
+        "id": "4",
+        "firstName": "Jason",
+        "lastName": "Yuen",
+        "fullName": "Jason Yuen",
+        "email": "jason_yuen@vrtx.com",
+        "role": "User"
+      }
+    ]
+  }
+}

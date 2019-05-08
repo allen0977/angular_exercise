@@ -1,0 +1,17 @@
+.add-user-dialog {
+    height: auto;
+}
+
+.mat-dialog-container {
+    padding: 0;
+    margin: 0;
+    width: 450px;
+    height: auto;
+}
+
+.dialog-content-wrapper {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+}

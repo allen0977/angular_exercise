@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  padding: 24px;
+}
+
+.todos-filter {
+  float: right;
+  position: relative;
+  left: 10px;
+  top: -5px;
+  margin-left: -10px;
+}
+
+.todos-filter-info {
+  float: right;
+  font-weight: normal;
+}
+
+.bottom-margin-zero {
+  margin-bottom: 0;
+}
+
+::ng-deep .align-center .mat-simple-snackbar {
+  justify-content: center;
+}

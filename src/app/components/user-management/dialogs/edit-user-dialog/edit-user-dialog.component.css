@@ -1,0 +1,14 @@
+.edit-user-dialog {
+    height: auto;
+}
+
+.mat-dialog-container {
+    width: 450px;
+    height: 320px;
+}
+
+.dialog-content-wrapper {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}

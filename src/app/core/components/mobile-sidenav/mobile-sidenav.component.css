@@ -1,0 +1,28 @@
+app-mobile-sidenav {
+    display: flex;
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    z-index: 99;
+    flex-direction: column;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-right: 8px;
+}
+
+.applicationtitle {
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: #5C5C5A;
+}
+
+a.active {
+    color: #47959F;
+    text-decoration: none;
+}
